@@ -98,3 +98,13 @@ h4 {
 #sample-background {
     width: 1200px;
 }
+
+.game-container {
+    background-image: url('../images/test-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 800px;
+    background-size: contain;
+    max-width: 100%;
+}
