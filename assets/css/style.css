@@ -92,3 +92,9 @@ h4 {
 .btn-play:hover:before {
         left: 7px;
 }
+
+/* Background Image */
+
+#sample-background {
+    width: 1200px;
+}
