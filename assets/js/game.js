@@ -7,6 +7,10 @@ function countdown() {
         "0:" + (seconds < 10 ? "0" : "") + String(seconds);
       if (seconds > 0) {
         setTimeout(tick, 1000);
+      } else {
+        console.log("Game Lost");
+        var modalLost = document.getElementById("myModalLost");
+        modalLost.style.display = "block";
       }
     }
     tick();
@@ -148,11 +152,11 @@ function gamePlay() {
               violin.addEventListener('click', gamePlay);
               break;
       }
-    } else {
-      console.log("Game Won");
-    }
+    } 
   } else {
-    console.log("Game End");
+    console.log("Game Won");
+    var modalWon = document.getElementById("myModalWon");
+    modalWon.style.display = "block";
   }
 }
 
