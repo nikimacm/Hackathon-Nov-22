@@ -64,7 +64,6 @@ function resetCharacters() {
   violinImg.classList.add("invisible");
 }
 
-
 /**
  * Main Game Play Function
  * A random number is selected. 
