@@ -13,6 +13,7 @@ html {
 }
 
 body {
+    height: 100vh;
     font-family: "Spectral" sans-serif;
 }
 
@@ -71,8 +72,8 @@ main {
 }
 
 .hero-image {
-    width: 600px;
-    height: 650px;
+    width: 60%;
+    height: 110%;
 }
 
 /* Basic Button Style */
@@ -136,7 +137,15 @@ main {
         left: 7px;
 } */
 
+/* Footer */
 
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    margin-bottom: 5px;
+}
 
 /* Background Image */
 
