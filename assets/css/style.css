@@ -111,6 +111,11 @@ main {
     color: #000;
 }
 
+/* Game Modal Buttons */
+.game-btn {
+    display: inline-block;
+}
+
 /* play button styles */
 
 /* .btn-play:hover {
