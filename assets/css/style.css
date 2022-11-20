@@ -184,3 +184,70 @@ main {
     margin: 0 50px;
     margin-top: 40px;
 }
+
+/* Character Clickable Divs */
+
+.invisible-div {
+    height: 100px;
+    width: 55px;
+    border: 2px solid red;
+    display: inline-block;
+}
+
+#bongo {
+    position: relative;
+    top: 390px;
+    left: 100px;
+}
+
+#cello {
+    position: relative;
+    top: 235px;
+    left: 422px;
+}
+
+#child-sing {
+    position: relative;
+    top: 341px;
+    left: 224px;
+}
+
+#drum {
+    position: relative;
+    top: 175px;
+    left: 621px;
+}
+
+#flute {
+    position: relative;
+    top: 350px;
+    left: 330px;
+}
+
+#guitar {
+    position: relative;
+    top: 207px;
+    left: 353px;
+}
+
+#piano {
+    position: relative;
+    height: 125px;
+    width: 70px;
+    top: 375px;
+    left: 440px;
+}
+
+#trombone {
+    position: relative;
+    height: 65px;
+    width: 100px;
+    top: 130px;
+    left: 260px;
+}
+
+#violin {
+    position: relative;
+    top: 255px;
+    right: 280px;
+}
