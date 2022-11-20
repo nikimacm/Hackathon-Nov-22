@@ -19,13 +19,12 @@ h1 {
     line-height: 40px;
     text-transform: uppercase;
     text-align: center;
-    color: #4361ee;
+    color: #fff;
     font-family: 'Karla', sans-serif;
     /* box-shadow: 
 		inset 0 0 0 1px rgba(53,86,129, 0.4), 
 		inset 0 0 5px rgba(53,86,129, 0.5),
 		inset -285px 0 35px white; */
-        margin-bottom: ;
 }
 
 h2 {
@@ -34,7 +33,6 @@ h2 {
     text-transform: uppercase;
     text-align: center;
     color: #7209b7;
-    
 }
 
 h3 {
@@ -51,6 +49,11 @@ h4 {
     text-transform: uppercase;
     color: #7209b7;
 }
+
+main {
+    margin-top: 40px;
+}
+
 /* Basic Button Style */
 
 .btn-wrapper {
@@ -59,7 +62,7 @@ h4 {
 }
 
 .btn , .btn-play {
-    width: 200px;
+    width: 260px;
     display: block;
     border: 0.16em solid #7209b7;
     border-radius: 1em;
@@ -118,6 +121,7 @@ h4 {
 }
 
 .navbar {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -127,37 +131,47 @@ h4 {
 .navbar i {
     color: white;
     transition: all 0.25s ease-in-out;
-    font-size: 20px;
+    font-size: 35px;
 }
 
 .navbar i:hover {
     color: #36454F;
 }
 
+.game-page {
+    display: inline-flex;
+    margin: 0px 0 0 20%;
+}
+
 .game-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin: 30px auto;
 }
 
 .game-container .game-screen {
-    width: 500px;
-    height: 500px;
+    width: 900px;
+    height: 700px;
     background-image: url('../images/Background.png');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 .game-controls {
-    background-color: #36454F;
+    width: 300px;
+    height: 636px;
+    /* background-color: #36454F; */
     text-align: center;
     padding: 20px;
+    margin-top: 32px;
 }
 
 .game-controls #timer {
-    color: #fff;
-    font-size: 20px;
+    /* color: #fff; */
+    color: #000;
+    font-size: 30px;
 }
 
 .game-controls .instrument-container {
@@ -165,5 +179,8 @@ h4 {
 }
 
 .game-controls .instrument-container img {
-    width: 100%;
+    width: 150px;
+    height: 200px;
+    margin: 0 50px;
+    margin-top: 40px;
 }
