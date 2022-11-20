@@ -157,3 +157,39 @@ function gamePlay() {
 }
 
 gamePlay();
+
+// Audio files:
+let bongoAudio = new Audio("../assets/audio/bongo.wav");
+let celloAudio = new Audio("../assets/audio/cello.wav");
+let childSingAudio = new Audio("../assets/audio/child-sing.wav");
+let drumAudio = new Audio("../assets/audio/drum.wav");
+let fluteAudio = new Audio("../assets/audio/flute.wav");
+let guitarAudio = new Audio("../assets/audio/guitar.wav");
+let pianoAudio = new Audio("../assets/audio/piano.wav");
+let tromboneAudio = new Audio("../assets/audio/trombone.mp3");
+let violinScaleAudio = new Audio("../assets/audio/violin-scale.wav");
+
+let audioToggler = document.getElementById('audio-toggler');
+let muteAudio = localStorage.getItem('muteAudio');
+
+function toggleAudio() {
+  if(muteAudio) {
+    bongoAudio.play();
+    bongoAudio.volume = 1;
+    audioToggler.classList.remove('fa-volume-mute');
+    audioToggler.classList.add('fa-volume-up');
+    muteAudio = false;
+    localStorage.setItem('muteAudio', false);
+  } else {
+    console.log('Muted');
+    audioToggler.classList.remove('fa-volume-up');
+    audioToggler.classList.add('fa-volume-mute');
+    muteAudio = true;
+    bongoAudio.volume = 0;
+    bongoAudio.pause();
+    bongoAudio.currentTime = 0;
+    localStorage.setItem('muteAudio', true);
+  }
+}
+
+audioToggler.addEventListener('click', toggleAudio);
