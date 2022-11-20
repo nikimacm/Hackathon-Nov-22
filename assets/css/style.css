@@ -302,32 +302,52 @@ main {
     height: 100%; 
     overflow: auto; 
     background: linear-gradient(45.34deg, #E77281 5.66%, #DCEDC1 94.35%);
-  }
+}
   
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    color: #36454F;
-    margin: 15% auto;
-    padding: 20px;
-    border: 3px solid #DCEDC1;
-    border-radius: 2em;
-    width: 50%;
-    text-align: center;
-    font-size: 14pt;
-  }
+/* Modal Content/Box */
+.modal-content {
+background-color: #fefefe;
+color: #36454F;
+margin: 15% auto;
+padding: 20px;
+border: 3px solid #DCEDC1;
+border-radius: 2em;
+width: 50%;
+text-align: center;
+font-size: 14pt;
+position: relative;
+}
   
   /* The Close Button */
 .close {
     color: #E77281;
-    float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
   
-  .close:hover,
-  .close:focus {
-    color: #DCEDC1;
+.close:hover,
+.close:focus {
+color: #DCEDC1;
+text-decoration: none;
+cursor: pointer;
+}
+
+.modal .github-link {
+    display: block;
+    text-align: left;
+    color: #36454F;
     text-decoration: none;
-    cursor: pointer;
-  }
+    transition: all 0.25s ease-in-out;
+}
+
+.modal .github-link i {
+    color: #36454F;
+    margin-right: 15px;
+}
+
+.modal .github-link:hover {
+    padding-left: 10px;
+}
