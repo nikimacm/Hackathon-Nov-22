@@ -6,10 +6,14 @@
     box-sizing: border-box;
 }
 
-body {
+html {
     height: 100vh;
     font-family: 'Spectral' sans-serif;
     background-image: linear-gradient(to bottom right, #A8E6Cf, #DBEDC1, #FED3B6, #FFAAA5, #FF8B94);
+}
+
+body {
+    font-family: "Spectral" sans-serif;
 }
 
 h1, h2, h3, h4 {
@@ -59,11 +63,23 @@ main {
     margin-top: 40px;
 }
 
+.hero-container {
+    width: 60%;
+    height: 500px;
+    display: flex;
+    margin: 20px 0 0 29%;
+}
+
+.hero-image {
+    width: 600px;
+    height: 650px;
+}
+
 /* Basic Button Style */
 
 .btn-wrapper {
     width: 100%;
-    
+    margin-top: 150px;
 }
 
 .btn , .btn-play {
@@ -75,7 +91,7 @@ main {
     /* background-color: #4361ee; */
     background-color: #37BF8C;
     padding: 14px 28px;
-    margin: 30px auto;
+    margin: 30px;
     font-size: 30px;
     font-family: 'Karla' , sans-serif;
     color: #fff;
@@ -161,7 +177,7 @@ main {
     width: 900px;
     height: 700px;
     border-radius: 1em;
-    /* background-image: url('../images/Background.png'); */
+    background-image: url('../images/Background.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -200,6 +216,11 @@ main {
     box-shadow: 0 0 8px #000;
     margin: 0 50px;
     margin-top: 40px;
+    position: absolute;
+}
+
+.invisible {
+    visibility: hidden;
 }
 
 /* Character Clickable Divs */
@@ -211,43 +232,43 @@ main {
     display: inline-block;
 }
 
-#bongo {
+#bongo-click-box {
     position: relative;
     top: 390px;
     left: 100px;
 }
 
-#cello {
+#cello-click-box {
     position: relative;
     top: 235px;
     left: 422px;
 }
 
-#child-sing {
+#child-sing-click-box {
     position: relative;
     top: 341px;
     left: 224px;
 }
 
-#drum {
+#drum-click-box {
     position: relative;
     top: 175px;
     left: 621px;
 }
 
-#flute {
+#flute-click-box {
     position: relative;
     top: 350px;
     left: 330px;
 }
 
-#guitar {
+#guitar-click-box {
     position: relative;
     top: 207px;
     left: 353px;
 }
 
-#piano {
+#piano-click-box {
     position: relative;
     height: 125px;
     width: 70px;
@@ -255,7 +276,7 @@ main {
     left: 440px;
 }
 
-#trombone {
+#trombone-click-box {
     position: relative;
     height: 65px;
     width: 100px;
@@ -263,7 +284,7 @@ main {
     left: 260px;
 }
 
-#violin {
+#violin-click-box {
     position: relative;
     top: 255px;
     right: 280px;
