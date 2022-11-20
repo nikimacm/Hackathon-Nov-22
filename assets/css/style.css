@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Spectral:wght@300&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Spectral" sans-serif;
 }
@@ -99,12 +105,53 @@ h4 {
     width: 1200px;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #4361ee;
+}
+
+.navbar i {
+    color: white;
+    transition: all 0.25s ease-in-out;
+    font-size: 20px;
+}
+
+.navbar i:hover {
+    color: #36454F;
+}
+
 .game-container {
-    background-image: url('../images/test-background.jpg');
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.game-container .game-screen {
+    width: 500px;
+    height: 500px;
+    background-image: url('../images/Background.png');
     background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 800px;
-    height: 800px;
-    background-size: contain;
-    max-width: 100%;
+}
+
+.game-controls {
+    background-color: #36454F;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-controls #timer {
+    color: #fff;
+    font-size: 20px;
+}
+
+.game-controls .instrument-container {
+    max-width: 100px;
+}
+
+.game-controls .instrument-container img {
+    width: 100%;
 }
