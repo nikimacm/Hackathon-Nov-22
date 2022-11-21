@@ -5,7 +5,7 @@ function countdown() {
       seconds--;
       counter.innerHTML =
         "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-      if (seconds > 0) {
+      if (seconds > 0) { // and array length > 0
         setTimeout(tick, 1000);
       } else {
         console.log("Game Lost");
@@ -42,11 +42,15 @@ const pianoImg = document.getElementById("piano-img");
 const tromboneImg = document.getElementById("trombone-img");
 const violinImg = document.getElementById("violin-img");
 
+let toggleImage = false;
+let toggleImageOn = document.getElementById("toggle-images-on");
+let toggleImageOff = document.getElementById("toggle-images-off");
+let toggleCharacter = 0
 
 /**
- * Removes all of the event listeners and makes Character Image invisible from the previous selection
+ * Removes all of the chracters event listeners
  */
-function resetCharacters() {
+function resetCharacterEventListeners() {
 
   bongo.removeEventListener('click', gamePlay);
   cello.removeEventListener('click', gamePlay);
@@ -58,6 +62,14 @@ function resetCharacters() {
   trombone.removeEventListener('click', gamePlay);
   violin.removeEventListener('click', gamePlay);
 
+}
+
+
+/**
+ * Makes Character Image invisible from the previous selection
+ */
+function resetCharacterImages() {
+
   bongoImg.classList.add("invisible");
   celloImg.classList.add("invisible");
   childSingImg.classList.add("invisible");
@@ -68,6 +80,7 @@ function resetCharacters() {
   tromboneImg.classList.add("invisible");
   violinImg.classList.add("invisible");
 }
+
 
 // Audio files:
 let bongoAudio = new Audio("assets/audio/bongo.wav");
@@ -106,7 +119,8 @@ function pauseAllAudio() {
  */
 function gamePlay() {
 
-  resetCharacters();
+  resetCharacterEventListeners();
+  resetCharacterImages();
   pauseAllAudio();
   gameScore++;
 
@@ -123,7 +137,10 @@ function gamePlay() {
               console.log("CASE 1: Bongo");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              bongoImg.classList.remove("invisible"); // Add an if statement for the toggling of these images
+              if (toggleImage) {
+                bongoImg.classList.remove("invisible"); // Add an if statement for the toggling of these images
+              }
+              toggleCharacter = bongoImg;
               bongoAudio.currentTime = 0;
               bongoAudio.play();
               bongoAudio.loop = true;
@@ -133,7 +150,10 @@ function gamePlay() {
               console.log("CASE 2: Cello");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              celloImg.classList.remove("invisible");
+              if (toggleImage) {
+                celloImg.classList.remove("invisible");
+              }
+              toggleCharacter = celloImg;
               celloAudio.currentTime = 0;
               celloAudio.play();
               celloAudio.loop = true;
@@ -143,7 +163,10 @@ function gamePlay() {
               console.log("CASE 3: Sing");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              childSingImg.classList.remove("invisible");
+              if (toggleImage) {
+                childSingImg.classList.remove("invisible");
+              }
+              toggleCharacter = childSingImg;
               childSingAudio.currentTime = 0;
               childSingAudio.play();
               childSingAudio.loop = true;
@@ -153,7 +176,10 @@ function gamePlay() {
               console.log("CASE 4: Drum");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              drumImg.classList.remove("invisible");
+              if (toggleImage) {
+                drumImg.classList.remove("invisible");
+              }
+              toggleCharacter = drumImg;
               drumAudio.currentTime = 0;
               drumAudio.play();
               drumAudio.loop = true;
@@ -163,7 +189,10 @@ function gamePlay() {
               console.log("CASE 5: Flute");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              fluteImg.classList.remove("invisible");
+              if (toggleImage) {
+                fluteImg.classList.remove("invisible");
+              }
+              toggleCharacter = fluteImg;
               fluteAudio.currentTime = 0;
               fluteAudio.play();
               fluteAudio.loop = true;
@@ -173,7 +202,10 @@ function gamePlay() {
               console.log("CASE 6: Guitar");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              guitarImg.classList.remove("invisible");
+              if (toggleImage) {
+                guitarImg.classList.remove("invisible");
+              }
+              toggleCharacter = guitarImg;
               guitarAudio.currentTime = 0;
               guitarAudio.play();
               guitarAudio.loop = true;
@@ -183,7 +215,10 @@ function gamePlay() {
               console.log("CASE 7: Piano");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              pianoImg.classList.remove("invisible");
+              if (toggleImage) {
+                pianoImg.classList.remove("invisible");
+              }
+              toggleCharacter = pianoImg;
               pianoAudio.currentTime = 0;
               pianoAudio.play();
               pianoAudio.loop = true;
@@ -193,7 +228,10 @@ function gamePlay() {
               console.log("CASE 8: Trombone");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              tromboneImg.classList.remove("invisible");
+              if (toggleImage) {
+                tromboneImg.classList.remove("invisible");
+              }
+              toggleCharacter = tromboneImg;
               tromboneAudio.currentTime = 0;
               tromboneAudio.play();
               tromboneAudio.loop = true;
@@ -203,7 +241,10 @@ function gamePlay() {
               console.log("CASE 9: Violin");
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
-              violinImg.classList.remove("invisible");
+              if (toggleImage) {
+                violinImg.classList.remove("invisible");
+              }
+              toggleCharacter = violinImg;
               violinScaleAudio.currentTime = 0;
               violinScaleAudio.play();
               violinScaleAudio.loop = true;
@@ -227,10 +268,25 @@ let muteAudio = localStorage.getItem('muteAudio');
 window.addEventListener('DOMContentLoaded', (event) => { 
   toggleAudio();
 
+  toggleImageOn.addEventListener('click', function() {
+    toggleImage = true;
+    toggleImageOff.classList.remove("invisible");
+    toggleImageOn.classList.add("invisible");
+    toggleCharacter.classList.remove("invisible"); 
+  });
+  
+  toggleImageOff.addEventListener('click', function() {
+    toggleImage = false;
+    toggleImageOn.classList.remove("invisible");
+    toggleImageOff.classList.add("invisible");
+    resetCharacterImages();
+  });
+
   startBtn.addEventListener('click', function() {
     countdown();
     gamePlay();
     startBtn.classList.add("invisible");
+    toggleImageOn.classList.remove("invisible");
   })
 });
 
