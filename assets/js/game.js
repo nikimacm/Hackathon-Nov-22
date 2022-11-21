@@ -1,26 +1,3 @@
-function countdown() {
-  var seconds = 60;
-
-  function tick() {
-    var counter = document.getElementById("timer");
-    seconds--;
-    counter.innerHTML =
-      "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-    if (randomCharacter.length !== 0) {
-      if (seconds > 0) {
-        setTimeout(tick, 1000);
-      } else {
-        console.log("Game Lost");
-        document.getElementById("game-score").innerText = gameScore;
-        var modalLost = document.getElementById("myModalLost");
-        modalLost.style.display = "block";
-        pauseAllAudio();
-      }
-    }
-  }
-  tick();
-}
-
 // Global Variables (To be moved to the top of the page)
 let randomCharacter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let numOfCharacters = 9;
@@ -49,6 +26,77 @@ let toggleImage = false;
 let toggleImageOn = document.getElementById("toggle-images-on");
 let toggleImageOff = document.getElementById("toggle-images-off");
 let toggleCharacter = 0
+
+
+// Audio files:
+let bongoAudio = new Audio("assets/audio/bongo.wav");
+let celloAudio = new Audio("assets/audio/cello.wav");
+let childSingAudio = new Audio("assets/audio/child-sing.wav");
+let drumAudio = new Audio("assets/audio/drum.wav");
+let fluteAudio = new Audio("assets/audio/flute.wav");
+let guitarAudio = new Audio("assets/audio/guitar.wav");
+let pianoAudio = new Audio("assets/audio/piano.wav");
+let tromboneAudio = new Audio("assets/audio/trombone.mp3");
+let violinScaleAudio = new Audio("assets/audio/violin-scale.wav");
+
+let startBtn = document.getElementById('start-btn');
+let audioToggler = document.getElementById('audio-toggler');
+let muteAudio = localStorage.getItem('muteAudio');
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  toggleAudio();
+
+  toggleImageOn.addEventListener('click', function () {
+    toggleImage = true;
+    toggleImageOff.classList.remove("invisible");
+    toggleImageOn.classList.add("invisible");
+    toggleCharacter.classList.remove("invisible");
+  });
+
+  toggleImageOff.addEventListener('click', function () {
+    toggleImage = false;
+    toggleImageOn.classList.remove("invisible");
+    toggleImageOff.classList.add("invisible");
+    resetCharacterImages();
+  });
+
+  startBtn.addEventListener('click', function () {
+    countdown();
+    gamePlay();
+    startBtn.classList.add("invisible");
+    toggleImageOn.classList.remove("invisible");
+  })
+});
+
+
+audioToggler.addEventListener('click', toggleAudio);
+
+/**
+ * Game Timer
+ */
+function countdown() {
+  var seconds = 60;
+
+  function tick() {
+    var counter = document.getElementById("timer");
+    seconds--;
+    counter.innerHTML =
+      "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+    if (randomCharacter.length !== 0) {
+      if (seconds > 0) {
+        setTimeout(tick, 1000);
+      } else {
+        document.getElementById("game-score").innerText = gameScore;
+        var modalLost = document.getElementById("myModalLost");
+        modalLost.style.display = "block";
+        pauseAllAudio();
+      }
+    }
+  }
+  tick();
+}
+
 
 /**
  * Removes all of the chracters event listeners
@@ -84,17 +132,6 @@ function resetCharacterImages() {
   violinImg.classList.add("invisible");
 }
 
-
-// Audio files:
-let bongoAudio = new Audio("assets/audio/bongo.wav");
-let celloAudio = new Audio("assets/audio/cello.wav");
-let childSingAudio = new Audio("assets/audio/child-sing.wav");
-let drumAudio = new Audio("assets/audio/drum.wav");
-let fluteAudio = new Audio("assets/audio/flute.wav");
-let guitarAudio = new Audio("assets/audio/guitar.wav");
-let pianoAudio = new Audio("assets/audio/piano.wav");
-let tromboneAudio = new Audio("assets/audio/trombone.mp3");
-let violinScaleAudio = new Audio("assets/audio/violin-scale.wav");
 
 /**
  * Pauses all of the audio.
@@ -137,11 +174,10 @@ function gamePlay() {
 
       switch (chosenCharacter) {
         case 1:
-          console.log("CASE 1: Bongo");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
-            bongoImg.classList.remove("invisible"); // Add an if statement for the toggling of these images
+            bongoImg.classList.remove("invisible");
           }
           toggleCharacter = bongoImg;
           bongoAudio.currentTime = 0;
@@ -150,7 +186,6 @@ function gamePlay() {
           bongo.addEventListener('click', gamePlay);
           break;
         case 2:
-          console.log("CASE 2: Cello");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -163,7 +198,6 @@ function gamePlay() {
           cello.addEventListener('click', gamePlay);
           break;
         case 3:
-          console.log("CASE 3: Sing");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -176,7 +210,6 @@ function gamePlay() {
           childSing.addEventListener('click', gamePlay);
           break;
         case 4:
-          console.log("CASE 4: Drum");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -189,7 +222,6 @@ function gamePlay() {
           drum.addEventListener('click', gamePlay);
           break;
         case 5:
-          console.log("CASE 5: Flute");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -202,7 +234,6 @@ function gamePlay() {
           flute.addEventListener('click', gamePlay);
           break;
         case 6:
-          console.log("CASE 6: Guitar");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -215,7 +246,6 @@ function gamePlay() {
           guitar.addEventListener('click', gamePlay);
           break;
         case 7:
-          console.log("CASE 7: Piano");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -228,7 +258,6 @@ function gamePlay() {
           piano.addEventListener('click', gamePlay);
           break;
         case 8:
-          console.log("CASE 8: Trombone");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -241,7 +270,6 @@ function gamePlay() {
           trombone.addEventListener('click', gamePlay);
           break;
         case 9:
-          console.log("CASE 9: Violin");
           randomCharacter.splice(randomNum, 1);
           numOfCharacters--;
           if (toggleImage) {
@@ -256,7 +284,6 @@ function gamePlay() {
       }
     }
   } else {
-    console.log("Game Won");
     document.getElementById("game-time").innerText = counter;
     var modalWon = document.getElementById("myModalWon");
     modalWon.style.display = "block";
@@ -264,35 +291,9 @@ function gamePlay() {
   }
 }
 
-let startBtn = document.getElementById('start-btn');
-let audioToggler = document.getElementById('audio-toggler');
-let muteAudio = localStorage.getItem('muteAudio');
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  toggleAudio();
-
-  toggleImageOn.addEventListener('click', function () {
-    toggleImage = true;
-    toggleImageOff.classList.remove("invisible");
-    toggleImageOn.classList.add("invisible");
-    toggleCharacter.classList.remove("invisible");
-  });
-
-  toggleImageOff.addEventListener('click', function () {
-    toggleImage = false;
-    toggleImageOn.classList.remove("invisible");
-    toggleImageOff.classList.add("invisible");
-    resetCharacterImages();
-  });
-
-  startBtn.addEventListener('click', function () {
-    countdown();
-    gamePlay();
-    startBtn.classList.add("invisible");
-    toggleImageOn.classList.remove("invisible");
-  })
-});
-
+/**
+ * Toggles game audio on and off
+ */
 function toggleAudio() {
   if (muteAudio) {
     bongoAudio.volume = 0.1;
@@ -309,7 +310,6 @@ function toggleAudio() {
     muteAudio = false;
     localStorage.setItem('muteAudio', false);
   } else {
-    console.log('Muted');
     audioToggler.classList.remove('fa-volume-up');
     audioToggler.classList.add('fa-volume-mute');
     muteAudio = true;
@@ -325,5 +325,3 @@ function toggleAudio() {
     localStorage.setItem('muteAudio', true);
   }
 }
-
-audioToggler.addEventListener('click', toggleAudio);
