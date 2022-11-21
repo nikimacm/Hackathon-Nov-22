@@ -137,32 +137,6 @@ main {
     display: inline-block;
 }
 
-/* play button styles */
-
-/* .btn-play:hover {
-    text-indent: 30px;
-    background: #eee;
-    color: #36454F;
-    opacity: 2;
-} */
-
-/* .btn-play {
-    transition: all 0.2s linear 0s;
-}
-
- .btn-play:before {
-    font-family: FontAwesome;
-    content:"\f178";
-    opacity: 0;
-    transform: scale(1,1);
-    text-indent: 0;
-    transition: all 200ms ease;
-}
-
-.btn-play:hover:before {
-        left: 7px;
-} */
-
 /* Footer */
 
 footer {
@@ -263,7 +237,6 @@ footer {
 .invisible-div {
     height: 100px;
     width: 55px;
-    border: 2px solid red;
     display: inline-block;
 }
 
