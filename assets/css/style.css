@@ -83,7 +83,7 @@ main {
     margin-top: 150px;
 }
 
-.btn , .btn-play {
+.btn, .btn-play {
     width: 260px;
     display: block;
     /* border: 0.16em solid #7209b7; */
@@ -110,6 +110,15 @@ main {
     /* color: #36454F; */
     color: #000;
 }
+
+/* Start Game Button */
+
+#start-btn {
+    position: relative;
+    top: 250px;
+    margin: 30px 0;
+}
+
 
 /* Game Modal Buttons */
 .game-btn {
@@ -228,7 +237,7 @@ footer {
     width: 150px;
     height: 200px;
     box-shadow: 0 0 8px #000;
-    margin: 0 50px;
+    margin: 0 5px;
     margin-top: 40px;
     position: absolute;
 }
