@@ -70,15 +70,15 @@ function resetCharacters() {
 }
 
 // Audio files:
-let bongoAudio = new Audio("../assets/audio/bongo.wav");
-let celloAudio = new Audio("../assets/audio/cello.wav");
-let childSingAudio = new Audio("../assets/audio/child-sing.wav");
-let drumAudio = new Audio("../assets/audio/drum.wav");
-let fluteAudio = new Audio("../assets/audio/flute.wav");
-let guitarAudio = new Audio("../assets/audio/guitar.wav");
-let pianoAudio = new Audio("../assets/audio/piano.wav");
-let tromboneAudio = new Audio("../assets/audio/trombone.mp3");
-let violinScaleAudio = new Audio("../assets/audio/violin-scale.wav");
+let bongoAudio = new Audio("assets/audio/bongo.wav");
+let celloAudio = new Audio("assets/audio/cello.wav");
+let childSingAudio = new Audio("assets/audio/child-sing.wav");
+let drumAudio = new Audio("assets/audio/drum.wav");
+let fluteAudio = new Audio("assets/audio/flute.wav");
+let guitarAudio = new Audio("assets/audio/guitar.wav");
+let pianoAudio = new Audio("assets/audio/piano.wav");
+let tromboneAudio = new Audio("assets/audio/trombone.mp3");
+let violinScaleAudio = new Audio("assets/audio/violin-scale.wav");
 
 /**
  * Pauses all of the audio.
