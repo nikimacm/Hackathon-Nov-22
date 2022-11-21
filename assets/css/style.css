@@ -8,13 +8,13 @@
 
 html {
     height: 100vh;
-    font-family: 'Spectral' sans-serif;
+    font-family: 'Spectral', sans-serif;
     background-image: linear-gradient(to bottom right, #A8E6Cf, #DBEDC1, #FED3B6, #FFAAA5, #FF8B94);
 }
 
 body {
     height: 100vh;
-    font-family: "Spectral" sans-serif;
+    font-family: 'Spectral', sans-serif;
 }
 
 h1, h2, h3, h4 {
