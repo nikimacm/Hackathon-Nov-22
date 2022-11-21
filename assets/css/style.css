@@ -386,3 +386,61 @@ cursor: pointer;
 .modal .github-link:hover {
     padding-left: 10px;
 }
+
+
+/* MEDIA QUERIES */
+
+/* For larger screen sizes from 1650px wide and down */
+
+@media screen and (max-width: 1650px) { 
+
+    .game-page {
+        margin: 0px 0 0 15%;
+    }
+    
+    .game-container {
+        margin: 20px auto;
+    }
+}
+
+/* For larger screen sizes from 1450px wide and down */
+
+@media screen and (max-width: 1450px) { 
+
+    .game-page {
+        margin: 0px 0 0 10%;
+    }
+    
+}
+
+/* For larger screen sizes from 1350px wide and down */
+
+@media screen and (max-width: 1350px) { 
+
+    .game-page {
+        margin: 0px 0 0 5%;
+    }
+    
+}
+
+/* For larger screen sizes from 1270px wide and down */
+
+@media screen and (max-width: 1270px) { 
+
+    .game-page {
+        margin: 0px 0 0 1%;
+    }
+
+    .game-controls {
+        width: 200px;
+    }
+
+    #start-btn {
+        width: 200px;
+    }
+
+    .game-controls .instrument-container img { 
+        margin: 0 0 0 -40px;
+    }
+
+}
