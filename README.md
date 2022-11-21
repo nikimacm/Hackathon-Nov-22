@@ -54,7 +54,7 @@
 
 * Main image where the user must click on child playing instrument they hear or see.
 
-![Game Image](/docs/features/Background.png)
+![Game Image](/docs/features/background.webp)
 
 * Start button to begin playing. And time which counts down from 60 seconds. Here you can see the image to be found and the audio button above.
 
@@ -79,7 +79,8 @@
 
 ## Credits
 
-* [Images taken from this site to make the main background image](https://depositphotos.com/vector-images/kids-playing-instruments.html)
+* [Images of kids and instruments taken from this site to make the main background image](https://depositphotos.com/vector-images/kids-playing-instruments.html)
+* All other images have been made by Mia
 * [Jack](https://github.com/Jack112-create)
 * [Sarah](https://github.com/rahcancode)
 * [Tom](https://github.com/TuckerFaulk)
