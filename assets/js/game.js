@@ -11,6 +11,15 @@ function countdown() {
         console.log("Game Lost");
         var modalLost = document.getElementById("myModalLost");
         modalLost.style.display = "block";
+        bongoAudio.pause();
+        celloAudio.pause();
+        childSingAudio.pause();
+        drumAudio.pause();
+        fluteAudio.pause();
+        guitarAudio.pause();
+        pianoAudio.pause();
+        tromboneAudio.pause();
+        violinScaleAudio.pause();
       }
     }
     tick();
