@@ -111,12 +111,24 @@ main {
     color: #000;
 }
 
+/* Toggle Icon Buttons */
+
+.toggle-images {
+    font-size: xx-large;
+    position: relative;
+    top: 130px;
+}
+
+#toggle-images-off {
+    top: 230px;
+}
+
 /* Start Game Button */
 
 #start-btn {
     position: relative;
-    top: 250px;
-    margin: 30px 0;
+    top: 200px;
+    margin: 0;
 }
 
 
