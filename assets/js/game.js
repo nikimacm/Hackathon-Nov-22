@@ -1,11 +1,13 @@
 function countdown() {
-    var seconds = 60;
-    function tick() {
-      var counter = document.getElementById("timer");
-      seconds--;
-      counter.innerHTML =
-        "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-      if (seconds > 0) { // and array length > 0
+  var seconds = 60;
+
+  function tick() {
+    var counter = document.getElementById("timer");
+    seconds--;
+    counter.innerHTML =
+      "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+    if (randomCharacter.length !== 0) {
+      if (seconds > 0) {
         setTimeout(tick, 1000);
       } else {
         console.log("Game Lost");
@@ -15,8 +17,9 @@ function countdown() {
         pauseAllAudio();
       }
     }
-    tick();
   }
+  tick();
+}
 
 // Global Variables (To be moved to the top of the page)
 let randomCharacter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -125,7 +128,7 @@ function gamePlay() {
   gameScore++;
 
   let counter = document.getElementById("timer").innerHTML;
-  
+
   if (randomCharacter.length !== 0) {
     if (counter !== "0:00") {
 
@@ -133,125 +136,125 @@ function gamePlay() {
       let chosenCharacter = randomCharacter[randomNum];
 
       switch (chosenCharacter) {
-          case 1:
-              console.log("CASE 1: Bongo");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                bongoImg.classList.remove("invisible"); // Add an if statement for the toggling of these images
-              }
-              toggleCharacter = bongoImg;
-              bongoAudio.currentTime = 0;
-              bongoAudio.play();
-              bongoAudio.loop = true;
-              bongo.addEventListener('click', gamePlay);
-              break;
-          case 2:
-              console.log("CASE 2: Cello");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                celloImg.classList.remove("invisible");
-              }
-              toggleCharacter = celloImg;
-              celloAudio.currentTime = 0;
-              celloAudio.play();
-              celloAudio.loop = true;
-              cello.addEventListener('click', gamePlay);
-              break;
-          case 3:
-              console.log("CASE 3: Sing");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                childSingImg.classList.remove("invisible");
-              }
-              toggleCharacter = childSingImg;
-              childSingAudio.currentTime = 0;
-              childSingAudio.play();
-              childSingAudio.loop = true;
-              childSing.addEventListener('click', gamePlay);
-              break;
-          case 4:
-              console.log("CASE 4: Drum");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                drumImg.classList.remove("invisible");
-              }
-              toggleCharacter = drumImg;
-              drumAudio.currentTime = 0;
-              drumAudio.play();
-              drumAudio.loop = true;
-              drum.addEventListener('click', gamePlay);
-              break;
-          case 5:
-              console.log("CASE 5: Flute");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                fluteImg.classList.remove("invisible");
-              }
-              toggleCharacter = fluteImg;
-              fluteAudio.currentTime = 0;
-              fluteAudio.play();
-              fluteAudio.loop = true;
-              flute.addEventListener('click', gamePlay);
-              break;
-          case 6:
-              console.log("CASE 6: Guitar");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                guitarImg.classList.remove("invisible");
-              }
-              toggleCharacter = guitarImg;
-              guitarAudio.currentTime = 0;
-              guitarAudio.play();
-              guitarAudio.loop = true;
-              guitar.addEventListener('click', gamePlay);
-              break;
-          case 7:
-              console.log("CASE 7: Piano");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                pianoImg.classList.remove("invisible");
-              }
-              toggleCharacter = pianoImg;
-              pianoAudio.currentTime = 0;
-              pianoAudio.play();
-              pianoAudio.loop = true;
-              piano.addEventListener('click', gamePlay);
-              break;
-          case 8:
-              console.log("CASE 8: Trombone");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                tromboneImg.classList.remove("invisible");
-              }
-              toggleCharacter = tromboneImg;
-              tromboneAudio.currentTime = 0;
-              tromboneAudio.play();
-              tromboneAudio.loop = true;
-              trombone.addEventListener('click', gamePlay);
-              break;
-          case 9:
-              console.log("CASE 9: Violin");
-              randomCharacter.splice(randomNum, 1);
-              numOfCharacters--;
-              if (toggleImage) {
-                violinImg.classList.remove("invisible");
-              }
-              toggleCharacter = violinImg;
-              violinScaleAudio.currentTime = 0;
-              violinScaleAudio.play();
-              violinScaleAudio.loop = true;
-              violin.addEventListener('click', gamePlay);
-              break;
+        case 1:
+          console.log("CASE 1: Bongo");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            bongoImg.classList.remove("invisible"); // Add an if statement for the toggling of these images
+          }
+          toggleCharacter = bongoImg;
+          bongoAudio.currentTime = 0;
+          bongoAudio.play();
+          bongoAudio.loop = true;
+          bongo.addEventListener('click', gamePlay);
+          break;
+        case 2:
+          console.log("CASE 2: Cello");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            celloImg.classList.remove("invisible");
+          }
+          toggleCharacter = celloImg;
+          celloAudio.currentTime = 0;
+          celloAudio.play();
+          celloAudio.loop = true;
+          cello.addEventListener('click', gamePlay);
+          break;
+        case 3:
+          console.log("CASE 3: Sing");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            childSingImg.classList.remove("invisible");
+          }
+          toggleCharacter = childSingImg;
+          childSingAudio.currentTime = 0;
+          childSingAudio.play();
+          childSingAudio.loop = true;
+          childSing.addEventListener('click', gamePlay);
+          break;
+        case 4:
+          console.log("CASE 4: Drum");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            drumImg.classList.remove("invisible");
+          }
+          toggleCharacter = drumImg;
+          drumAudio.currentTime = 0;
+          drumAudio.play();
+          drumAudio.loop = true;
+          drum.addEventListener('click', gamePlay);
+          break;
+        case 5:
+          console.log("CASE 5: Flute");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            fluteImg.classList.remove("invisible");
+          }
+          toggleCharacter = fluteImg;
+          fluteAudio.currentTime = 0;
+          fluteAudio.play();
+          fluteAudio.loop = true;
+          flute.addEventListener('click', gamePlay);
+          break;
+        case 6:
+          console.log("CASE 6: Guitar");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            guitarImg.classList.remove("invisible");
+          }
+          toggleCharacter = guitarImg;
+          guitarAudio.currentTime = 0;
+          guitarAudio.play();
+          guitarAudio.loop = true;
+          guitar.addEventListener('click', gamePlay);
+          break;
+        case 7:
+          console.log("CASE 7: Piano");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            pianoImg.classList.remove("invisible");
+          }
+          toggleCharacter = pianoImg;
+          pianoAudio.currentTime = 0;
+          pianoAudio.play();
+          pianoAudio.loop = true;
+          piano.addEventListener('click', gamePlay);
+          break;
+        case 8:
+          console.log("CASE 8: Trombone");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            tromboneImg.classList.remove("invisible");
+          }
+          toggleCharacter = tromboneImg;
+          tromboneAudio.currentTime = 0;
+          tromboneAudio.play();
+          tromboneAudio.loop = true;
+          trombone.addEventListener('click', gamePlay);
+          break;
+        case 9:
+          console.log("CASE 9: Violin");
+          randomCharacter.splice(randomNum, 1);
+          numOfCharacters--;
+          if (toggleImage) {
+            violinImg.classList.remove("invisible");
+          }
+          toggleCharacter = violinImg;
+          violinScaleAudio.currentTime = 0;
+          violinScaleAudio.play();
+          violinScaleAudio.loop = true;
+          violin.addEventListener('click', gamePlay);
+          break;
       }
-    } 
+    }
   } else {
     console.log("Game Won");
     document.getElementById("game-time").innerText = counter;
@@ -265,24 +268,24 @@ let startBtn = document.getElementById('start-btn');
 let audioToggler = document.getElementById('audio-toggler');
 let muteAudio = localStorage.getItem('muteAudio');
 
-window.addEventListener('DOMContentLoaded', (event) => { 
+window.addEventListener('DOMContentLoaded', (event) => {
   toggleAudio();
 
-  toggleImageOn.addEventListener('click', function() {
+  toggleImageOn.addEventListener('click', function () {
     toggleImage = true;
     toggleImageOff.classList.remove("invisible");
     toggleImageOn.classList.add("invisible");
-    toggleCharacter.classList.remove("invisible"); 
+    toggleCharacter.classList.remove("invisible");
   });
-  
-  toggleImageOff.addEventListener('click', function() {
+
+  toggleImageOff.addEventListener('click', function () {
     toggleImage = false;
     toggleImageOn.classList.remove("invisible");
     toggleImageOff.classList.add("invisible");
     resetCharacterImages();
   });
 
-  startBtn.addEventListener('click', function() {
+  startBtn.addEventListener('click', function () {
     countdown();
     gamePlay();
     startBtn.classList.add("invisible");
@@ -291,7 +294,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function toggleAudio() {
-  if(muteAudio) {
+  if (muteAudio) {
     bongoAudio.volume = 0.1;
     celloAudio.volume = 0.1;
     childSingAudio.volume = 0.1;
