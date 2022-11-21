@@ -17,8 +17,6 @@ function countdown() {
     tick();
   }
 
-countdown();
-
 // Global Variables (To be moved to the top of the page)
 let randomCharacter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let numOfCharacters = 9;
@@ -218,13 +216,18 @@ function gamePlay() {
   }
 }
 
-gamePlay();
-
+let startBtn = document.getElementById('start-btn');
 let audioToggler = document.getElementById('audio-toggler');
 let muteAudio = localStorage.getItem('muteAudio');
 
 window.addEventListener('DOMContentLoaded', (event) => { 
   toggleAudio();
+
+  startBtn.addEventListener('click', function() {
+    countdown();
+    gamePlay();
+    startBtn.classList.add("invisible");
+  })
 });
 
 function toggleAudio() {
