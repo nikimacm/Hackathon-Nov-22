@@ -222,6 +222,7 @@ footer {
 .game-controls .instrument-container img {
     width: 150px;
     height: 200px;
+    background-color: #fff;
     box-shadow: 0 0 8px #000;
     margin: 0 5px;
     margin-top: 40px;
