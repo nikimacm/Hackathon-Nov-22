@@ -11,15 +11,7 @@ function countdown() {
         console.log("Game Lost");
         var modalLost = document.getElementById("myModalLost");
         modalLost.style.display = "block";
-        bongoAudio.pause();
-        celloAudio.pause();
-        childSingAudio.pause();
-        drumAudio.pause();
-        fluteAudio.pause();
-        guitarAudio.pause();
-        pianoAudio.pause();
-        tromboneAudio.pause();
-        violinScaleAudio.pause();
+        pauseAllAudio();
       }
     }
     tick();
@@ -89,6 +81,23 @@ let tromboneAudio = new Audio("../assets/audio/trombone.mp3");
 let violinScaleAudio = new Audio("../assets/audio/violin-scale.wav");
 
 /**
+ * Pauses all of the audio.
+ * Pauses the previous instrument before the next one is played
+ * Pauses the audio when the game is won/lost
+ */
+function pauseAllAudio() {
+  bongoAudio.pause();
+  celloAudio.pause();
+  childSingAudio.pause();
+  drumAudio.pause();
+  fluteAudio.pause();
+  guitarAudio.pause();
+  pianoAudio.pause();
+  tromboneAudio.pause();
+  violinScaleAudio.pause();
+}
+
+/**
  * Main Game Play Function
  * A random number is selected. 
  * This corresponds to an instrument in the switch.
@@ -98,6 +107,7 @@ let violinScaleAudio = new Audio("../assets/audio/violin-scale.wav");
 function gamePlay() {
 
   resetCharacters();
+  pauseAllAudio();
 
   let counter = document.getElementById("timer").innerHTML;
   
@@ -113,16 +123,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               bongoImg.classList.remove("invisible"); // Add an if statement for the toggling of these images
-              celloAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               bongoAudio.currentTime = 0;
               bongoAudio.play();
+              bongoAudio.loop = true;
               bongo.addEventListener('click', gamePlay);
               break;
           case 2:
@@ -130,16 +133,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               celloImg.classList.remove("invisible");
-              bongoAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               celloAudio.currentTime = 0;
               celloAudio.play();
+              celloAudio.loop = true;
               cello.addEventListener('click', gamePlay);
               break;
           case 3:
@@ -147,16 +143,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               childSingImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               childSingAudio.currentTime = 0;
               childSingAudio.play();
+              childSingAudio.loop = true;
               childSing.addEventListener('click', gamePlay);
               break;
           case 4:
@@ -164,16 +153,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               drumImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              childSingAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               drumAudio.currentTime = 0;
               drumAudio.play();
+              drumAudio.loop = true;
               drum.addEventListener('click', gamePlay);
               break;
           case 5:
@@ -181,16 +163,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               fluteImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               fluteAudio.currentTime = 0;
               fluteAudio.play();
+              fluteAudio.loop = true;
               flute.addEventListener('click', gamePlay);
               break;
           case 6:
@@ -198,16 +173,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               guitarImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               guitarAudio.currentTime = 0;
               guitarAudio.play();
+              guitarAudio.loop = true;
               guitar.addEventListener('click', gamePlay);
               break;
           case 7:
@@ -215,16 +183,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               pianoImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              tromboneAudio.pause();
-              violinScaleAudio.pause();
               pianoAudio.currentTime = 0;
               pianoAudio.play();
+              pianoAudio.loop = true;
               piano.addEventListener('click', gamePlay);
               break;
           case 8:
@@ -232,16 +193,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               tromboneImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              violinScaleAudio.pause();
               tromboneAudio.currentTime = 0;
               tromboneAudio.play();
+              tromboneAudio.loop = true;
               trombone.addEventListener('click', gamePlay);
               break;
           case 9:
@@ -249,16 +203,9 @@ function gamePlay() {
               randomCharacter.splice(randomNum, 1);
               numOfCharacters--;
               violinImg.classList.remove("invisible");
-              bongoAudio.pause();
-              celloAudio.pause();
-              childSingAudio.pause();
-              drumAudio.pause();
-              fluteAudio.pause();
-              guitarAudio.pause();
-              pianoAudio.pause();
-              tromboneAudio.pause();
               violinScaleAudio.currentTime = 0;
               violinScaleAudio.play();
+              violinScaleAudio.loop = true;
               violin.addEventListener('click', gamePlay);
               break;
       }
@@ -267,15 +214,7 @@ function gamePlay() {
     console.log("Game Won");
     var modalWon = document.getElementById("myModalWon");
     modalWon.style.display = "block";
-    bongoAudio.pause();
-    celloAudio.pause();
-    childSingAudio.pause();
-    drumAudio.pause();
-    fluteAudio.pause();
-    guitarAudio.pause();
-    pianoAudio.pause();
-    tromboneAudio.pause();
-    violinScaleAudio.pause();
+    pauseAllAudio();
   }
 }
 
