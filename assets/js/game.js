@@ -9,6 +9,7 @@ function countdown() {
         setTimeout(tick, 1000);
       } else {
         console.log("Game Lost");
+        document.getElementById("game-score").innerText = gameScore;
         var modalLost = document.getElementById("myModalLost");
         modalLost.style.display = "block";
         pauseAllAudio();
@@ -20,6 +21,7 @@ function countdown() {
 // Global Variables (To be moved to the top of the page)
 let randomCharacter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let numOfCharacters = 9;
+let gameScore = 0;
 const bongo = document.getElementById("bongo-click-box");
 const cello = document.getElementById("cello-click-box");
 const childSing = document.getElementById("child-sing-click-box");
@@ -125,6 +127,7 @@ function gamePlay() {
               bongoAudio.play();
               bongoAudio.loop = true;
               bongo.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 2:
               console.log("CASE 2: Cello");
@@ -135,6 +138,7 @@ function gamePlay() {
               celloAudio.play();
               celloAudio.loop = true;
               cello.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 3:
               console.log("CASE 3: Sing");
@@ -145,6 +149,7 @@ function gamePlay() {
               childSingAudio.play();
               childSingAudio.loop = true;
               childSing.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 4:
               console.log("CASE 4: Drum");
@@ -155,6 +160,7 @@ function gamePlay() {
               drumAudio.play();
               drumAudio.loop = true;
               drum.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 5:
               console.log("CASE 5: Flute");
@@ -165,6 +171,7 @@ function gamePlay() {
               fluteAudio.play();
               fluteAudio.loop = true;
               flute.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 6:
               console.log("CASE 6: Guitar");
@@ -175,6 +182,7 @@ function gamePlay() {
               guitarAudio.play();
               guitarAudio.loop = true;
               guitar.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 7:
               console.log("CASE 7: Piano");
@@ -185,6 +193,7 @@ function gamePlay() {
               pianoAudio.play();
               pianoAudio.loop = true;
               piano.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 8:
               console.log("CASE 8: Trombone");
@@ -195,6 +204,7 @@ function gamePlay() {
               tromboneAudio.play();
               tromboneAudio.loop = true;
               trombone.addEventListener('click', gamePlay);
+              gameScore++;
               break;
           case 9:
               console.log("CASE 9: Violin");
@@ -205,11 +215,13 @@ function gamePlay() {
               violinScaleAudio.play();
               violinScaleAudio.loop = true;
               violin.addEventListener('click', gamePlay);
+              gameScore++;
               break;
       }
     } 
   } else {
     console.log("Game Won");
+    document.getElementById("game-time").innerText = counter;
     var modalWon = document.getElementById("myModalWon");
     modalWon.style.display = "block";
     pauseAllAudio();
