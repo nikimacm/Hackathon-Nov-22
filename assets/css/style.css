@@ -243,37 +243,37 @@ footer {
 
 #bongo-click-box {
     position: relative;
-    top: 390px;
+    top: 385px;
     left: 100px;
 }
 
 #cello-click-box {
     position: relative;
-    top: 235px;
+    top: 225px;
     left: 422px;
 }
 
 #child-sing-click-box {
     position: relative;
-    top: 341px;
+    top: 311px;
     left: 224px;
 }
 
 #drum-click-box {
     position: relative;
-    top: 175px;
+    top: 170px;
     left: 621px;
 }
 
 #flute-click-box {
     position: relative;
-    top: 350px;
+    top: 340px;
     left: 330px;
 }
 
 #guitar-click-box {
     position: relative;
-    top: 100px;
+    top: 95px;
     right: 190px;
 }
 
@@ -281,7 +281,7 @@ footer {
     position: relative;
     height: 125px;
     width: 70px;
-    top: 375px;
+    top: 395px;
     left: 440px;
 }
 
@@ -289,13 +289,13 @@ footer {
     position: relative;
     height: 65px;
     width: 100px;
-    top: 130px;
-    left: 260px;
+    top: 90px;
+    left: 255px;
 }
 
 #violin-click-box {
     position: relative;
-    top: 255px;
+    top: 250px;
     right: 280px;
 }
 
@@ -317,7 +317,7 @@ footer {
 .modal-content {
 background-color: #fefefe;
 color: #36454F;
-margin: 15% auto;
+margin: 9% auto;
 padding: 20px;
 border: 3px solid #DCEDC1;
 border-radius: 2em;
@@ -325,6 +325,10 @@ width: 50%;
 text-align: center;
 font-size: 14pt;
 position: relative;
+}
+
+.game-modal {
+    margin: 15% auto;
 }
   
   /* The Close Button */
